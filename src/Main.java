@@ -1,15 +1,21 @@
-import java.util.Arrays;
-
+/**
+ * Головний клас, що містить точку входу в програму.
+ */
 public class Main {
-
+    /**
+     * Головний метод, що викликається при запуску програми.
+     *
+     * @param args аргументи командного рядка.
+     */
     public static void main(String[] args) {
-        int [][] matrix = new int[3][3];
-        int x=0;
+        int[][] data1 = {{1, 2}, {3, 4}};
+        int[][] data2 = {{5, 6}, {7, 8}};
 
-        for(int[] row:matrix)
-            Arrays.fill(row,x);
+        Matrix matrix1 = new Matrix(data1);
+        Matrix matrix2 = new Matrix(data2);
 
-        for(int[] row:matrix)
-            System.out.println(Arrays.toString(row));
+        Matrix sum = matrix1.add(matrix2);
+
+        sum.print(); // вивід матриці суми
     }
 }
